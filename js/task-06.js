@@ -18,7 +18,7 @@ const invalid = document.querySelector("#validation-input.invalid")
 
 
 function blurChecking(event) {
-    const inputLength = Number(event.target.value.length);
+    const inputLength = Number(event.target.value.trim().length);
    const dataLength = Number(event.target.getAttribute("data-length"));
     // console.log(event.target.getAttribute("text"))
     if (inputLength === dataLength) {
