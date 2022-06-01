@@ -4,11 +4,12 @@ console.log(inputEl);
 console.log(outputEl);
 
 
-    
 
 
-function inputFunction(e) {
-    console.log(e.target.value);
+
+function replaceText(e) {
+    const inputText = e.target.value.trim();
+    outputEl.textContent = inputText ? inputText : "Anonymous";
 }
 
-inputEl.addEventListener('input', inputFunction);
+inputEl.addEventListener('input', replaceText);
