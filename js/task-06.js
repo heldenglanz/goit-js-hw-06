@@ -26,7 +26,8 @@ function blurChecking(event) {
         event.target.classList.remove('invalid');
         return
     }
-    return event.target.classList.add('invalid');
+     event.target.classList.add('invalid');
+    return event.target.classList.remove('valid');
 }
 
 
