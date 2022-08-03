@@ -21,4 +21,4 @@ const mainUlEl = document.querySelector(".gallery");
 const markup = images.map(({ url, alt }) => {
   return `<li><img src="${url}" alt="${alt}"></li>`
 });
-mainUlEl.insertAdjacentHTML("afterend", markup.join(""));
+mainUlEl.insertAdjacentHTML("afterbegin", markup.join(""));

@@ -12,7 +12,7 @@ console.log(stringControl, textContent);
 
 function sizingText(event) {
     const swapper = event.currentTarget.value;
-    return textContent.style.fontSize = swapper + "px";
+    // return textContent.style.fontSize = swapper + "px";
 // console.log(event.currentTarget.value)
  }
 
