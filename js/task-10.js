@@ -25,21 +25,44 @@
 // Создай функцию destroyBoxes(), которая очищает содержимое div#boxes, 
 // тем самым удаляя все созданные элементы.
 
-// function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-// }
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+const divEl = document.querySelector('#boxes');
+
+const controlsEl = document.querySelector('#controls')
+const inputBox = controlsEl.children[0];
+const createBTN = controlsEl.children[1];
+const destrBTN = controlsEl.children[2];
 
 
+createBTN.addEventListener('click', ()=>{
+  let amount = inputBox.value;
+  createBoxes(amount);
+});
 
 function createBoxes(amount) {
-  const divEl = document.querySelector('#boxes');
-  const createBTN = document.querySelector('data-create')
-  let boxArr = [];
-  boxArr.push(amount).forEach(box => {
-    
-  });;
-  // console.log(divEl(...boxArr));
 
-  
+  for (let i=0; i<amount; i+=1){
+    const boxEl = document.createElement('div');
+   let sizeBox = 30;
+   sizeBox += i*10;
+boxEl.style.width = `${sizeBox}px`;
+boxEl.style.height = `${sizeBox}px`;
+boxEl.style.backgroundColor = getRandomHexColor();
+divEl.appendChild(boxEl);
 };
+};
+
+
+destrBTN.addEventListener('click', ()=>{
+  destroyBoxes();
+})
+  function destroyBoxes(){
+    divEl.innerHTML = "";
+    inputBox.value = "";
+  }
+
+
+
 
